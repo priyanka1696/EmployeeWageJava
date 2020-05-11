@@ -9,30 +9,26 @@ public class EmployeeWageJava {
 
 	int TotalEmpWage=0;
 	int EmpWage=0;
-	int TotalWorkingDays=0;
-
-
-while(TotalWorkingDays < NumberOfWorkingDays){
 	int EmpHrs=0;
-	TotalWorkingDays++;
 
-	int empcheck=((int)Math.floor(Math.random() * 10))%3;
-	switch (( empcheck ))
+for (int day=0;day<NumberOfWorkingDays;day++) 
 	{
-		case IsFullTime:
+	   int empcheck=((int)Math.floor(Math.random() * 10))%3;
+		switch (( empcheck ))
+		 {
+		     case IsFullTime:
 			EmpHrs=8;
 			break;
-		case IsPartTime:
+		     case IsPartTime:
 			EmpHrs=4;
 			break;
-		default:
+		     default:
 			EmpHrs=0;
-	}
+		}
+	     }
 
-		int empWage=EmpHrs*empRatePerHrs;
+		EmpWage=EmpHrs*empRatePerHrs;
 		TotalEmpWage+=EmpWage;
-		System.out.println("Employee Wage="+EmpWage);
-	}
 		System.out.println("Employee Wage="+TotalEmpWage);
 
 	}
