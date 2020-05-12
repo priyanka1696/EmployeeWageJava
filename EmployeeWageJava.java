@@ -9,11 +9,10 @@ public class EmployeeWageJava {
 
 	int TotalEmpWage=0;
 	int EmpWage=0;
-	int TotalWorkingDays=0;
-
-
-while(TotalWorkingDays < NumberOfWorkingDays){
 	int EmpHrs=0;
+
+
+for (int day=0; day<NumberOfWorkingDays;day++){
 	TotalWorkingDays++;
 
 	int empcheck=((int)Math.floor(Math.random() * 10))%3;
@@ -29,7 +28,7 @@ while(TotalWorkingDays < NumberOfWorkingDays){
 			EmpHrs=0;
 	}
 
-		int empWage=EmpHrs*empRatePerHrs;
+	        empWage=EmpHrs*empRatePerHrs;
 		TotalEmpWage+=EmpWage;
 		System.out.println("Employee Wage="+EmpWage);
 	}
