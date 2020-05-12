@@ -4,17 +4,16 @@ public class EmployeeWageJava {
         	public static final int IsPartTime=2;
   	        public static final int empRatePerHrs=20;
 		public static final int NumberOfWorkingDays=20;
-                public static final int MaxHrsInMonth=10;
+               
      public static void main(String[] args) {
          System.out.println("Welcome to Employee Wage..");
 
-	int TotalEmpHrs=0;
-	int TotalWorkingDays=0;
+	int TotalEmpWage=0;
+	int EmpWage=0;
 	int EmpHrs=0;
 
 
-while (TotalEmpHrs <= MaxHrsInMonth && TotalWorkingDays < NumberOfWorkingDays){
-	TotalWorkingDays++;
+for (int day = 0; day < NumberOfWorkingDays; day++ ){
 
 	int empcheck=((int)Math.floor(Math.random() * 10))%3;
 	switch (( empcheck ))
@@ -29,10 +28,11 @@ while (TotalEmpHrs <= MaxHrsInMonth && TotalWorkingDays < NumberOfWorkingDays){
 			EmpHrs=0;
 	}
 
-	        TotalEmpHrs+= EmpHrs;
-		System.out.println("Day#: ="+ TotalWorkingDays + "EmpHrs:" + EmpHrs);
+	        EmpWage = EmpHrs * empRatePerHrs;
+		TotalEmpWage+= EmpWage;
+		System.out.println("Emp Wage:"+EmpWage);
 	}
-	     	int TotalEmpWage = TotalEmpHrs*empRatePerHrs;
+	     	
 		System.out.println("Total Emp Wage="+TotalEmpWage);
 
 	}
