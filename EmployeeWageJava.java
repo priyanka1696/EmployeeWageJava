@@ -32,7 +32,6 @@ for (int day = 0; day < NumberOfWorkingDays; day++ ){
 		TotalEmpWage+= EmpWage;
 		System.out.println("Emp Wage:"+EmpWage);
 	}
-	     	
 		System.out.println("Total Emp Wage="+TotalEmpWage);
 
 	}
