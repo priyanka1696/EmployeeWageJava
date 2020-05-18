@@ -1,6 +1,11 @@
+interface IComputeEmpWage{
+	public void addCompanyEmpWage( String company, int empRatePerHours, int numOfWorkingDays, int maxHoursPerMonth );
+	public void computeEmpWage();
+}
+
 class CompanyEmpWage {
 
-	public final String company;
+   public final String company;
    public final int empRatePerHours;
    public final int numOfWorkingDays;
    public final int maxHoursPerMonth;
