@@ -28,7 +28,11 @@ class CompanyEmpWage {
    }
 }
 
+<<<<<<< HEAD
 public class EmployeeWageJava implements IComputeEmpWage {
+=======
+public class EmployeeWageJava {
+>>>>>>> Day23UseCase10
 	//Constans
 	public static final int IS_PART_TIME = 1;
 	public static final int IS_FULL_TIME = 2;
