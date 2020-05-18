@@ -28,7 +28,11 @@ class CompanyEmpWage {
    }
 }
 
+<<<<<<< HEAD
 public class EmpWageBuilderArray implements IComputeEmpWage {
+=======
+public class EmpWageBuilderArray implements  IComputeEmpWage {
+>>>>>>> Day23UseCase11
 	//Constans
 	public static final int IsPartTime = 1;
 	public static final int IsFullTime = 2;
@@ -49,6 +53,7 @@ public class EmpWageBuilderArray implements IComputeEmpWage {
 	}
 
 	public void computeEmpWage() {
+<<<<<<< HEAD
 		for (int i = 0; i < companyEmpWageArrayList.size(); i++){
 			CompanyEmpWage companyEmpWage = companyEmpWageArrayList.get(i);
 			companyEmpWage.setTotalEmpWage(this.computeEmpWage(companyEmpWage));
@@ -59,6 +64,11 @@ public class EmpWageBuilderArray implements IComputeEmpWage {
 	public void computeDailyWage() {
 		for (int j = 0; j < dailyWageList.size(); j++) {
 			System.out.println(dailyWageList.get(j));
+=======
+		for (int i = 0; i < numOfCompany; i++){
+			companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(companyEmpWageArray[i]));
+			System.out.println(companyEmpWageArray[i]);
+>>>>>>> Day23UseCase11
 		}
 	}
 
