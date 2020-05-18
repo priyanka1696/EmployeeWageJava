@@ -1,6 +1,11 @@
+interface IComputeEmpWage{
+	public void addCompanyEmpWage( String company, int empRatePerHours, int numOfWorkingDays, int maxHoursPerMonth );
+	public void computeEmpWage();
+}
+
 class CompanyEmpWage {
 
-	public final String company;
+   public final String company;
    public final int empRatePerHours;
    public final int numOfWorkingDays;
    public final int maxHoursPerMonth;
@@ -23,7 +28,7 @@ class CompanyEmpWage {
    }
 }
 
-public class EmpWageBuilderArray {
+public class EmployeeWageJava implements IComputeEmpWage {
 	//Constans
 	public static final int IS_PART_TIME = 1;
 	public static final int IS_FULL_TIME = 2;
@@ -31,7 +36,7 @@ public class EmpWageBuilderArray {
 	private int numOfCompany = 0;
 	private CompanyEmpWage[] companyEmpWageArray;
 
-	public EmpWageBuilderArray() {
+	public EmployeeWageJava() {
 		companyEmpWageArray = new CompanyEmpWage[5];
 	}
 
@@ -40,7 +45,7 @@ public class EmpWageBuilderArray {
 		numOfCompany++;
 	}
 
-	private void computeEmpWage() {
+	public void computeEmpWage() {
 		for (int i = 0; i < numOfCompany; i++){
 			companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(companyEmpWageArray[i]));
 			System.out.println(companyEmpWageArray[i]);
@@ -72,9 +77,9 @@ public class EmpWageBuilderArray {
    }
 
 	public static void main(String[] args) {
-		EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
-		empWageBuilder.addCompanyEmpWage("DMart", 20, 20, 100);
-		empWageBuilder.addCompanyEmpWage("Reliance", 10, 4, 50);
-		empWageBuilder.computeEmpWage();
+		EmployeeWageJava empWagejava = new EmployeeWageJava();
+		empWagejava.addCompanyEmpWage("DMart", 20, 20, 100);
+		empWagejava.addCompanyEmpWage("Reliance", 10, 4, 50);
+		empWagejava.computeEmpWage();
 	}
 }

@@ -30,15 +30,17 @@ class CompanyEmpWage {
 
 public class EmpWageBuilderArray implements IComputeEmpWage {
 	//Constans
-	public static final int IS_PART_TIME = 1;
-	public static final int IS_FULL_TIME = 2;
-
+	public static final int IsPartTime = 1;
+	public static final int IsFullTime = 2;
+	public static final int ArrayList=0;
 
 	private int numOfCompany = 0;
 	private ArrayList<CompanyEmpWage> companyEmpWageArrayList;
+	private ArrayList<Integer> dailyWageList;
 
 	public EmpWageBuilderArray() {
 		companyEmpWageArrayList = new ArrayList<>();
+		dailyWageList = new ArrayList<>();
 	}
 
 	public void addCompanyEmpWage(String company, int empRatePerHours, int numOfWorkingDays, int maxHoursPerMonth) {
@@ -54,6 +56,12 @@ public class EmpWageBuilderArray implements IComputeEmpWage {
 		}
 	}
 
+	public void computeDailyWage() {
+		for (int j = 0; j < dailyWageList.size(); j++) {
+			System.out.println(dailyWageList.get(j));
+		}
+	}
+
 	private int computeEmpWage(CompanyEmpWage companyEmpWage) {
 		//Variables
 		int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
@@ -63,15 +71,17 @@ public class EmpWageBuilderArray implements IComputeEmpWage {
          totalWorkingDays++;
          int empCheck = (int) Math.floor(Math.random() * 10) % 3;
          switch(empCheck) {
-            case IS_PART_TIME:
+            case IsPartTime:
                empHrs = 8;
                break;
-            case IS_FULL_TIME:
+            case IsFullTime:
                empHrs = 12;
                break;
             default:
                empHrs = 0;
          }
+			int dailyWage = empHrs * companyEmpWage.empRatePerHours;
+			dailyWageList.add(dailyWage);
          totalEmpHrs += empHrs;
          System.out.println("Day#: " + totalWorkingDays + "Employee Hours: " + empHrs);
       }
@@ -83,5 +93,6 @@ public class EmpWageBuilderArray implements IComputeEmpWage {
 		empWageBuilder.addCompanyEmpWage("DMart", 20, 20, 100);
 		empWageBuilder.addCompanyEmpWage("Reliance", 10, 4, 50);
 		empWageBuilder.computeEmpWage();
+		empWageBuilder.computeDailyWage();
 	}
 }
