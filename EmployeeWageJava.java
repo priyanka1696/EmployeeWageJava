@@ -1,6 +1,6 @@
 class CompanyEmpWage {
 
-	public final String company;
+   public final String company;
    public final int empRatePerHours;
    public final int numOfWorkingDays;
    public final int maxHoursPerMonth;
