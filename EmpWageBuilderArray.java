@@ -1,3 +1,5 @@
+import java.util.*;
+
 interface IComputeEmpWage{
 	public void addCompanyEmpWage( String company, int empRatePerHours, int numOfWorkingDays, int maxHoursPerMonth );
 	public void computeEmpWage();
@@ -28,15 +30,10 @@ class CompanyEmpWage {
    }
 }
 
-<<<<<<< HEAD
 public class EmpWageBuilderArray implements IComputeEmpWage {
-=======
-public class EmpWageBuilderArray implements  IComputeEmpWage {
->>>>>>> Day23UseCase11
 	//Constans
-	public static final int IsPartTime = 1;
-	public static final int IsFullTime = 2;
-	public static final int ArrayList=0;
+	public static final int IS_PART_TIME = 1;
+	public static final int IS_FULL_TIME = 2;
 
 	private int numOfCompany = 0;
 	private ArrayList<CompanyEmpWage> companyEmpWageArrayList;
@@ -53,7 +50,6 @@ public class EmpWageBuilderArray implements  IComputeEmpWage {
 	}
 
 	public void computeEmpWage() {
-<<<<<<< HEAD
 		for (int i = 0; i < companyEmpWageArrayList.size(); i++){
 			CompanyEmpWage companyEmpWage = companyEmpWageArrayList.get(i);
 			companyEmpWage.setTotalEmpWage(this.computeEmpWage(companyEmpWage));
@@ -64,11 +60,6 @@ public class EmpWageBuilderArray implements  IComputeEmpWage {
 	public void computeDailyWage() {
 		for (int j = 0; j < dailyWageList.size(); j++) {
 			System.out.println(dailyWageList.get(j));
-=======
-		for (int i = 0; i < numOfCompany; i++){
-			companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(companyEmpWageArray[i]));
-			System.out.println(companyEmpWageArray[i]);
->>>>>>> Day23UseCase11
 		}
 	}
 
@@ -81,10 +72,10 @@ public class EmpWageBuilderArray implements  IComputeEmpWage {
          totalWorkingDays++;
          int empCheck = (int) Math.floor(Math.random() * 10) % 3;
          switch(empCheck) {
-            case IsPartTime:
+            case IS_PART_TIME:
                empHrs = 8;
                break;
-            case IsFullTime:
+            case IS_FULL_TIME:
                empHrs = 12;
                break;
             default:
