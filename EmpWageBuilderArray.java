@@ -1,3 +1,5 @@
+import java.util.*;
+
 interface IComputeEmpWage{
 	public void addCompanyEmpWage( String company, int empRatePerHours, int numOfWorkingDays, int maxHoursPerMonth );
 	public void computeEmpWage();
@@ -30,8 +32,8 @@ class CompanyEmpWage {
 
 public class EmpWageBuilderArray implements IComputeEmpWage {
 	//Constans
-	public static final int IS_PART_TIME = 1;
-	public static final int IS_FULL_TIME = 2;
+	public static final int IsPartTime = 1;
+	public static final int IsFullTime = 2;
 
 
 	private int numOfCompany = 0;
@@ -63,10 +65,10 @@ public class EmpWageBuilderArray implements IComputeEmpWage {
          totalWorkingDays++;
          int empCheck = (int) Math.floor(Math.random() * 10) % 3;
          switch(empCheck) {
-            case IS_PART_TIME:
+            case IsPartTime:
                empHrs = 8;
                break;
-            case IS_FULL_TIME:
+            case IsFullTime:
                empHrs = 12;
                break;
             default:
